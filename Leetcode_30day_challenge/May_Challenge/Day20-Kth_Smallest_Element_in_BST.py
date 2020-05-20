@@ -25,7 +25,7 @@ class Solution:
         
         return inorder[k-1]
         
- #---------------------------------------------------------------------------------------------------------------------------------#
+ #----------------------------------------------------------------------------------------------------------------------------------#
  #Solution - 2
  '''Using Inorder Traversal and storing the answer in a variable and return the answer at the end of the function
  Time: O(N)
