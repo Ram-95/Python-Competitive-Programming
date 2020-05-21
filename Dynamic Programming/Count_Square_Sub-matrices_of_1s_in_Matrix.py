@@ -1,7 +1,3 @@
-
-
-
-
 '''
 Leetcode question. 
 Given a Matrix of size M x N, you have to find out the 
@@ -29,10 +25,3 @@ class Solution:
                 
         
         return sums
-
-
-
-
-
-
-
