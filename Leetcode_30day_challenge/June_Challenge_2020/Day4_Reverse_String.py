@@ -1,4 +1,4 @@
-#Reverse a string without using extra space.
+#Reverse a string without using extra space. Do it Inplace.
 #Used Two pointer approach.
 
 class Solution:
@@ -13,7 +13,3 @@ class Solution:
             s[p1], s[p2] = s[p2], s[p1]
             p1 += 1
             p2 -= 1
-            
-        
-        
-
