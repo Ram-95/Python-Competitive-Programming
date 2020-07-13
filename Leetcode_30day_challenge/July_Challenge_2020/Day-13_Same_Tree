@@ -1,0 +1,63 @@
+'''Method 1 - Using Level order traversal and comparing.'''
+
+from collections import deque
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def isSameTree(self, p: TreeNode, t: TreeNode) -> bool:
+        def solve(p):
+            q = deque()
+            level = []
+            sep = '$'
+        
+            q.append(p)
+            q.append(sep)
+            prev = -1
+        
+            while q:
+                #print(q)
+                temp = q.popleft()
+            
+                if temp != sep and temp:
+                    level.append(temp.val)
+            
+                    #Adding Children
+                    if temp:
+                        if temp.left is None and temp.right:
+                            q.append(None)
+                            q.append(temp.right)
+                        elif temp.right is None and temp.left:
+                            q.append(temp.left)
+                            q.append(None)
+                        elif temp.right and temp.left:
+                            q.append(temp.left)
+                            q.append(temp.right)
+                    
+                elif temp is None:
+                    level.append(temp)
+            
+                else:
+                    q.append(sep)
+                    if temp == prev:
+                        break
+                prev = temp
+            #print(level)        
+            return level
+        
+        arr = solve(p)
+        arr1 = solve(t)
+        #print(f'Arr: {arr}')
+        #print(f'Arr1 : {arr1}')
+        if arr == arr1:
+            return True
+        return False
+                
+'''Method 2 - Recursive Solution - Short and Elegant'''
+def isSameTree(self, p, q):
+    if p and q:
+        return p.val == q.val and self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)
+    return p is q       
