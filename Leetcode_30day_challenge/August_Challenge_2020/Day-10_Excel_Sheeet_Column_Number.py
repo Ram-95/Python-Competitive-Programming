@@ -1,3 +1,7 @@
+# HINT: This problem is Converting a base-26 number 
+# to a base-10 Number.
+
+# My Solution
 class Solution:
     def titleToNumber(self, s: str) -> int:
         d = {}
