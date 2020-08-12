@@ -16,3 +16,19 @@ class Solution:
         return arr[rowIndex]
         
         
+# Method - Using nCr
+# Given kth row consists of the kCr values (k - Given K value; r in [0:k+1]) 
+# Calculate the nCr values and return the answer
+# Python's in-built module that calculates nCr
+
+from math import comb
+class Solution:
+    def getRow(self, rowIndex: int) -> List[int]:
+        arr = []
+        if rowIndex == 0:
+            return [1]
+        
+        for i in range(rowIndex+1):
+            arr.append(math.comb(rowIndex,i))
+        
+        return arr
