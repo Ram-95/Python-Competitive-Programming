@@ -44,7 +44,7 @@ class Solution:
         
         '''
         for i in collections.Counter(s).values():
-            if not(ans%2 == 1 and (i%2 == 1)):
+            if not(ans & 1 == 1 and (i & 1 == 1)):
                 ans += i
             else:
                 if i > 1:
