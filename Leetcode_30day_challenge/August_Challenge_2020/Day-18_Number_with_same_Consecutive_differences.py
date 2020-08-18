@@ -35,3 +35,26 @@ class Solution:
             solve(N, K, arr, x, str(i))
        
         return sorted(arr)
+
+    
+    # Method - 2 | BFS Solution
+    '''
+    We initial the current result with all 1-digit numbers, like cur = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].
+
+    Each turn, for each x in cur,
+    we get its last digit y = x % 10.
+    If y + K < 10, we add x * 10 + y + K to the new list.
+    If y - K >= 0, we add x * 10 + y - K to the new list.
+
+    We repeat this step N - 1 times and return the final result.
+    '''
+    
+    
+    class Solution:
+    def numsSameConsecDiff(self, N: int, K: int) -> List[int]:
+        nums = range(10)
+    
+        for i in range(N-1):
+            nums = {x * 10 + y for x in nums for y in [x % 10 + K, x % 10 - K] if x and y in range(0,10)}
+        return nums
+    
