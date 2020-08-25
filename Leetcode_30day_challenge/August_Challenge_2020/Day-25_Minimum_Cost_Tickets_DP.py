@@ -1,4 +1,4 @@
-''' Question:
+''' Question: https://leetcode.com/problems/minimum-cost-for-tickets/
 In a country popular for train travel, you have planned some train travelling one year in advance.  The days of the year that you will travel is given as an array days.  Each day is an integer from 1 to 365.
 
 Train tickets are sold in 3 different ways:
