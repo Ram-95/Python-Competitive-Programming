@@ -4,5 +4,5 @@ class Solution:
         #Removing the first and the last character from temp
         temp = temp[1:-1]
         
-        return temp.find(s) != -1
+        return s in temp
         
