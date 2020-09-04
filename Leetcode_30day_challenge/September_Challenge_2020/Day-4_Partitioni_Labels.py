@@ -28,4 +28,21 @@ class Solution:
                 temp = ''
         
         return ans
-  
+
+    
+
+''' Method - 2: A bit of Optimisation '''
+
+class Solution(object):
+    def partitionLabels(self, S):
+        # Stores the last index of each character present in the String
+        last = {c: i for i, c in enumerate(S)}
+        j = anchor = 0
+        ans = []
+        for i, c in enumerate(S):
+            j = max(j, last[c])
+            if i == j:
+                ans.append(i - anchor + 1)
+                anchor = i + 1
+            
+        return ans
