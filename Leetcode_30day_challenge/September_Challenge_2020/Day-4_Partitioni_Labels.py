@@ -1,4 +1,4 @@
-''' My Solution - O(N) Time and Space
+''' My Solution - O(N) Time and O(26) Space
 https://leetcode.com/explore/challenge/card/september-leetcoding-challenge/554/week-1-september-1st-september-7th/3448/discuss/828005/Python-O(N)-Dictionary-and-Set
 '''
 class Solution:
