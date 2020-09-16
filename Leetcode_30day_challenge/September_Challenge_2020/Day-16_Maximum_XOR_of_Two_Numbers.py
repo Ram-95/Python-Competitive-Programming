@@ -2,7 +2,7 @@
 
 # Method - 1 - Brute Force | O(N^2) Time leads to TLE
 
-# Method - 2 - Using Trie
+# Method - 2 - Using Trie -Try doing on your own
 class TrieNode():
     zero = None
     one = None
@@ -83,3 +83,22 @@ class Solution:
                 max_xor = max_xor_for_num
 
         return max_xor
+
+    
+    # Method - 3 - Figure out this Logic
+    class Solution:
+    def findMaximumXOR(self, nums: List[int]) -> int:
+        res = 0
+        for i in range(30, -1, -1):
+            mySet = set()
+            res <<= 1
+            res += 1
+            isValid = False
+            for num in nums:
+                if (num >> i) in mySet:
+                    isValid = True
+                    break
+                mySet.add((num >> i) ^ res)
+            if not isValid:
+                res -= 1
+        return res
