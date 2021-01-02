@@ -1,3 +1,5 @@
+'''My Solution | Time - O(N)'''
+
 class Solution:
     ans = None
     def getTargetCopy(self, original: TreeNode, cloned: TreeNode, target: TreeNode) -> TreeNode:
