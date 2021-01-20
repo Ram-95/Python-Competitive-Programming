@@ -1,3 +1,5 @@
+'''O(N) Time and Space'''
+
 class Solution:
     def isValid(self, s: str) -> bool:
         n = len(s)
