@@ -1,3 +1,5 @@
+'''My Solution - O(N * set size) Time and O(set size) Space.'''
+
 class Solution:
     def shortestToChar(self, s: str, c: str) -> List[int]:
         m = set()
@@ -18,4 +20,9 @@ class Solution:
                 
         return ans
             
-        
+'''
+O(N) Solution using Min array of indices.
+1. Traverse left to right and fill the array with difference of indices.
+2. Traverse right to left and fill the array with difference of indices.
+3. Ans is minimum indices of above.
+'''     
