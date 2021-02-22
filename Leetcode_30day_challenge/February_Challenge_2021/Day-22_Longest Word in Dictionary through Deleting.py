@@ -2,6 +2,7 @@ class Solution:
     def findLongestWord(self, s: str, d: List[str]) -> str:
         ans_len = 0
         ans = ''
+        # Sorting the list based on the length of its strings & then it's lexicographic order
         d.sort(key=lambda x: (-len(x), x))
         print(d)
         for i in d:
