@@ -1,4 +1,4 @@
-''' Linear Search - O(NM) Time '''
+''' Linear Search - O(Rows * Cols) Time '''
 class Solution:
     def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
         rows = len(matrix)
