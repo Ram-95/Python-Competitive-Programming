@@ -1,3 +1,4 @@
+''' My Solution - O(N) Time and Space. '''
 import collections
 class Solution:
     def findErrorNums(self, nums: List[int]) -> List[int]:
