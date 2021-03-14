@@ -32,3 +32,32 @@ class Solution:
         arr[k-1].val, arr[n-k].val = arr[n-k].val, arr[k-1].val
         
         return t_head
+
+    
+''' Optimized Solution - O(N) Time and O(1) Space. '''
+class Solution:
+    def swapNodes(self, head: ListNode, k: int) -> ListNode:
+        # arr stores the two nodes -> kth from last and kth from first
+        arr = []
+        t_head = head
+        n = 0
+        # Finding the length of the LL
+        while head:
+            n += 1
+            head = head.next
+        
+        head = t_head
+        x = 0
+        while t_head:
+            x += 1
+            if x == n-k+1:
+                arr.append(t_head)
+            if x == k:
+                arr.append(t_head)
+            t_head = t_head.next
+        
+        # Swapping the values
+        arr[0].val, arr[1].val = arr[1].val, arr[0].val
+        
+        return head
+        
