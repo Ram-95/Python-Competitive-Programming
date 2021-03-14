@@ -34,7 +34,7 @@ class Solution:
         return t_head
 
     
-''' Optimized Solution - O(N) Time and O(1) Space. '''
+''' Optimized Solution Two Passes - O(N) Time and O(1) Space. '''
 class Solution:
     def swapNodes(self, head: ListNode, k: int) -> ListNode:
         # arr stores the two nodes -> kth from last and kth from first
@@ -61,3 +61,17 @@ class Solution:
         
         return head
         
+''' Optimized One Pass Solution - O(N) Time and O(1) Space. '''
+
+class Solution:
+    def swapNodes(self, head: ListNode, k: int) -> ListNode:
+        n1, n2, p = None, None, head
+        while p is not None:
+            k -= 1
+            n2 = None if n2 == None else n2.next
+            if k == 0:
+                n1 = p
+                n2 = head
+            p = p.next
+        n1.val, n2.val = n2.val, n1.val
+        return head
