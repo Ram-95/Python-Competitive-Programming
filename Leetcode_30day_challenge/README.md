@@ -1,1 +1,2 @@
-## Problems of Leetcode Monthly Challenges 2020
+## Problems of Leetcode Monthly Challenges
+My solutions for various problems in LeetCode Long Challenges.
