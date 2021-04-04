@@ -1,3 +1,4 @@
+# Using inbuilt Deque
 from collections import deque
 
 class MyCircularQueue:
