@@ -8,6 +8,8 @@ class Solution:
             
 
 ''' Optimized O(N) Time and O(N) Space. '''
+
+# Two pass Solution
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         # Keys are the value of nums, Values is a list = [frequency, Indices....]
@@ -28,5 +30,15 @@ class Solution:
                 
             
             
-            
+# One Pass Solution
+'''While inserting the element in dictionary itself, we check if (target - i) is already present in dict. If present return the indices there itself.'''
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        d = {}
+        for i,v in enumerate(nums):
+            value = target - v
+            if value in d:
+                return [d[value], i]
+            else:
+                d[v] = i
         
