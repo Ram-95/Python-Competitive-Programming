@@ -4,14 +4,8 @@ Given an n-ary tree, return the level order traversal of its nodes' values.
 Nary-Tree input serialization is represented in their level order traversal, each group of children is separated by the null value (See examples).
 """
 
+# Solution - 1
 from collections import deque
-"""
-# Definition for a Node.
-class Node:
-    def __init__(self, val=None, children=None):
-        self.val = val
-        self.children = children
-"""
 class Solution:
     def levelOrder(self, root: 'Node') -> List[List[int]]:
         # Base Condition
@@ -58,3 +52,22 @@ class Solution:
                 
         return ans
         
+
+        
+# Solution - 2 Pythonic Way
+from collections import deque
+class Solution:
+    def levelOrder(self, root: 'Node') -> List[List[int]]:
+        # Base Condition
+        if root is None:
+            return []
+        # Append the root to deque
+        q = deque([root])
+        ans = []
+        while q:
+            # Append the list of nodes present in the deque
+            ans.append([node.val for node in q])
+            # Update/Append the Deque with the list of nodes from the next level.
+            q = [node for nodes in q for node in nodes.children if node]
+        
+        return ans
