@@ -1,5 +1,5 @@
 # TC: O(N) | SC: O(N)
-
+# Method - 1: Traverse the BST, store the nodes values in a Dictionary. Then find the sum of two numbers equals target.
 from collections import defaultdict
 class Solution:
     def findTarget(self, root: Optional[TreeNode], k: int) -> bool:
@@ -22,3 +22,5 @@ class Solution:
         
         return False
         
+# Method - 2: Since it is a BST, for every element we can search for the element b (b = target - node.val) in O(H) Time. 
+# TC: O(N) and space will now be O(H) [Best: logN and Worst: N]
