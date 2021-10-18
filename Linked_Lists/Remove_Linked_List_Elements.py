@@ -1,5 +1,6 @@
 # URL: https://leetcode.com/problems/remove-linked-list-elements/
 # This method handles all the edge cases - All values are same, starting node value is val etc.,
+# Time: O(N); Space: O(1)
 
 class Solution:
     def removeElements(self, head: Optional[ListNode], val: int) -> Optional[ListNode]:
