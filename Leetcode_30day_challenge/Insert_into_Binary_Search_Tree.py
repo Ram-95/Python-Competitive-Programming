@@ -1,5 +1,5 @@
-# Time: O(N) and Space: O(1)
-
+""" Time: O(N) and Space: O(1) """
+# Iterative Solution
 class Solution:
     def insertIntoBST(self, root: Optional[TreeNode], val: int) -> Optional[TreeNode]:
         if root is None:
@@ -22,3 +22,14 @@ class Solution:
 
         return root
             
+
+# Recursive Solution
+class Solution:
+    def insertIntoBST(self, root: Optional[TreeNode], val: int) -> Optional[TreeNode]:
+        if root is None:
+            root = TreeNode(val)
+        elif root.val < val:
+            root.right = self.insertIntoBST(root.right, val)
+        else:
+            root.left = self.insertIntoBST(root.left, val)
+        return root
