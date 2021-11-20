@@ -1,4 +1,5 @@
 # Solution - 1: Time: O(N)
+# This will only check for existence of a Valid Triplet. THIS WILL NOT GIVE WHAT THAT TRIPLET IS.
 class Solution:
     def increasingTriplet(self, nums: List[int]) -> bool:
         # Set both the first and the second values as MAX value
