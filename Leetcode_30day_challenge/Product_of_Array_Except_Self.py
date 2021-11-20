@@ -20,3 +20,28 @@ class Solution:
         ans[n-1] = pre[n-2]        
         
         return ans
+
+# Solution - 2: Time: O(N) Time and O(1) Space
+class Solution:
+    def productExceptSelf(self, nums: List[int]) -> List[int]:
+        n = len(nums)
+        c = nums.count(0)
+        prod = 1
+        ans = [0]*n
+        zero_idx = None
+        # Calculating the Product
+        for i,v in enumerate(nums):
+            if v != 0:
+                prod *= v
+            else:
+                zero_idx = i
+
+        if c > 1:
+            return ans
+        elif c == 0:
+            for i in range(n):
+                ans[i] = prod//nums[i]
+        else:
+            ans[zero_idx] = prod
+            
+        return ans
