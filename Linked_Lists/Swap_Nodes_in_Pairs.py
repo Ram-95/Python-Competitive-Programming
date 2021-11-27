@@ -1,0 +1,23 @@
+# Solution - 1: Time: O(N) and Space: O(1)
+class Solution:
+    def swapPairs(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        # Base condition
+        if not head or not head.next:
+            return head
+        t_head = head.next
+        p1, p2 = head, head.next
+        prev_p1 = None
+        while p1 and p2:
+            temp = p2
+            p1.next = temp.next
+            temp.next = p1
+            
+            if prev_p1:
+                prev_p1.next = p2
+            prev_p1 = p1    
+            
+            p1 = p1.next
+            if p1:
+                p2 = p1.next
+            
+        return t_head
