@@ -1,4 +1,4 @@
-# Solution - 1: Swapping the Nodes | Time: O(N) and Space: O(1)
+# Solution - 1: Swapping the Nodes (Iterative) | Time: O(N) and Space: O(1)
 class Solution:
     def swapPairs(self, head: Optional[ListNode]) -> Optional[ListNode]:
         # Base condition
@@ -22,8 +22,19 @@ class Solution:
             
         return t_head
 
+# Solution - 1 Swapping the Nodes (Recursive) | Time: O(N) and Space: O(N)
+class Solution:
+    def swapPairs(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        if head and head.next:
+            temp = head.next
+            head.next = self.swapPairs(temp.next)
+            temp.next = head
+            return temp
+        
+        return head
     
-# Solution - 2: Swapping the Values | Time: O(N) and Space: O(1)
+
+    # Solution - 2: Swapping the Values | Time: O(N) and Space: O(1)
 class Solution:
     def swapPairs(self, head: ListNode) -> ListNode:
         if not head or not head.next:
