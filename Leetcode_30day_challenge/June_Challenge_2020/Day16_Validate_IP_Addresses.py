@@ -8,7 +8,7 @@ def isIPv4(s):
 
 def isIPv6(s):
     if len(s) > 4:
-        return Fase
+        return False
     try:
         return int(s, 16) >= 0 and s[0] != '-'
     except:
